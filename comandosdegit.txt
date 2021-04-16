@@ -5,3 +5,5 @@
 Nota: el comando 'git clone' se utiliza una única vez por un repositorio en una máquina, más allá de que lo pueda utilizar varias veces.
 
 El comando 'git status' se ejecuta las veces que uno quiera y cuando uno quiera.
+
+Editado: Cambiado el mensaje.
