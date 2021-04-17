@@ -1,6 +1,6 @@
 <?php
 
-$edad = 15;
+$edad = 21;
 
 if($edad>18){
     echo "Es menor de edad";
