@@ -3,6 +3,7 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+  width: 100px;
 }
 </style>
 
@@ -41,14 +42,14 @@ if (!empty($edad)){
             break; 
     }
 
-        print_r("Esta persona " . $resultado);
+        print_r(" Esta persona " . $resultado);
 }
 
 ?>
 
 <form action="ejercicio5.php" method="post">
 
-    <input type="number" name="edad" placeholder="Ingrese la edad" required>
+    <input type="number" name="edad" placeholder="Ingrese la edad" min="1" max="120" required>
     <input type="submit" value="Enviar">
 
 </form>
