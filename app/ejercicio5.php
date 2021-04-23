@@ -2,7 +2,7 @@
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
-  margin: -1000px; 
+  margin: -1001px; 
   width: 100px;
 }
 </style>
