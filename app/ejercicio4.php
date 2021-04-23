@@ -7,7 +7,7 @@ input[type=number]::-webkit-outer-spin-button {
 </style>
 
 <?php 
-if (isset($_POST['valor1']) && isset($_POST['valor2']) && isset($_POST['valor3'])){
+If (isset($_POST['valor1']) && isset($_POST['valor2']) && isset($_POST['valor3'])){
     $valor1 = $_POST['valor1'];
     $valor2 = $_POST['valor2'];
     $valor3 = $_POST['valor3'];
