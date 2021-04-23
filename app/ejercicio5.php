@@ -16,7 +16,6 @@ if (isset($_POST['edad'])){
 
 if (!empty($edad)){
     switch($edad){
-        case 0:
         case 1:
         case 2:
         case 3:
