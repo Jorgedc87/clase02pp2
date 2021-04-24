@@ -14,28 +14,32 @@ if (isset($_POST['valor1']) && isset($_POST['valor2']) && isset($_POST['valor3']
     $valor2 = $_POST['valor2'];
     $valor3 = $_POST['valor3'];
 
-    // if($valor1 != $valor2 && $valor1 != $valor3 && $valor2 != $valor3){
-    //     if($valor1>$valor2 && $valor1>$valor3){
-    //         if($valor2 > $valor3){
-    //             $medio = $valor2;
-    //         }else{
-    //             $medio = $valor3;
-    //         }
-    //     }else{
-    //         if($valor2>$valor3){
-    //             if($valor1>$valor3){
-    //                 $medio = $valor1;
-    //             }else{
-    //                 $medio = $valor3;
-    //             }
-    //         }else{
-    //             if($valor3>$valor1){
-    //                 $medio = $valor3;
-    //             }else{
-    //                 $medio = $valor1;
-    //             }
-    //         }
-    //     }
+    if($valor1 != $valor2 && $valor1 != $valor3 && $valor2 != $valor3){
+        if($valor1>$valor2 && $valor1>$valor3){
+            // Mayor = 1
+            if($valor2 > $valor3){
+                $medio = $valor2;
+            }else{
+                $medio = $valor3;
+            }
+        }else{
+            if($valor2>$valor1 && $valor2>$valor3){
+                // Mayor = 2
+                if($valor1 > $valor3){
+                    $medio = $valor1;
+                }else{
+                    $medio = $valor3;
+                }
+            }else{
+                // Mayor = 3
+                if($valor1 > $valor2){
+                    $medio = $valor1;
+                }else{
+                    $medio = $valor2;
+                }
+
+            }
+        }
 
         $resultado = ("El número medio es: " . $medio);
     }else{
