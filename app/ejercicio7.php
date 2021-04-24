@@ -41,9 +41,9 @@ if (isset($_POST['valor1']) && isset($_POST['valor2']) && isset($_POST['valor3']
             }
         }
 
-        $resultado = ("El número medio es: " . $medio);
+        $resultado = ($valor1 . ", " . $valor2 . ", ". $valor3 . ". El número medio es: " . $medio);
     }else{
-        $resultado = "No hay número medio";
+        $resultado = ($valor1 . ", " . $valor2 . ", ". $valor3 . ". No hay número medio");
     }
 
     if(!empty($resultado)){
