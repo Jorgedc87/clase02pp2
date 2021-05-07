@@ -1,4 +1,4 @@
-<!-- <style>
+<style>
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -8,20 +8,17 @@ input[type=number]::-webkit-outer-spin-button {
 </style>
 
 <form action="calcular.php" method="post">
-    <label for="">Sumar:</label>
-    <input type="number" name="suma1" placeholder="Ingrese el valor 1" required>
-    <input type="number" name="suma2" placeholder="Ingrese el valor 2" required>
-    <input type="submit">
-    <br><br>
-    <label for="">Dividir:</label>
-    <input type="number" name="dividir1" placeholder="Ingrese el valor 1" required>
-    <input type="number" name="dividir2" placeholder="Ingrese el valor 2" required>
-    <input type="submit">
-    <label for="">Dividir:</label>
+    <label for="">Valores:</label>
     <input type="number" name="valor1" placeholder="Ingrese el valor 1" required>
     <input type="number" name="valor2" placeholder="Ingrese el valor 2" required>
-    <input type="submit">
-</form> -->
+    <br><br>
+    <label for="">Operador:</label>
+    <input type="text" name="operador" placeholder="Sumar o Dividir" required>
+    <input type="submit" value="Enviar">
+    <br><br>
+    El operador funciona con las palabras "Sumar" o "Dividir".
+    
+</form>
 
 <?php 
 
@@ -51,9 +48,6 @@ MostrarResultado: Solo invocar e imprimir el resultado
 
 */
 
-$valor1 = 10;
-$valor2 = 0;
-
 function sumar($numero1,$numero2){
     $resultado = $numero1 + $numero2;
     return $resultado;
@@ -76,7 +70,38 @@ function retornarSiEsCero($numero){
     }
 }
 
-echo dividir($valor1,$valor2);
+function calcular($valor1,$valor2,$operador){
+    switch($operador){
+        case "Sumar": 
+            // $resultado = sumar($valor1,$valor2);
+            mostrarResultado(sumar($valor1,$valor2));
+            break;
+        case "Dividir": 
+            // $resultado = dividir($valor1,$valor2);
+            mostrarResultado(dividir($valor1,$valor2));
+            break;
+        default: 
+            return "No existe esta función aun.";
+            break;
+    }
+}
+
+function mostrarResultado($resultado){
+    echo $resultado;
+}
+
+if(isset($_POST['valor1'])){
+    $valor1 = $_POST['valor1'];
+    $valor2 = $_POST['valor2'];
+    $operador = $_POST['operador'];
+    
+    echo calcular($valor1,$valor2,$operador);
+}else{
+    $valor1 = 1;
+    $valor2 = 1;
+    $operador = "Sumar";
+}
+
 
 
 ?>
