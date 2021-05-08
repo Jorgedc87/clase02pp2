@@ -73,17 +73,16 @@ function retornarSiEsCero($numero){
 function calcular($valor1,$valor2,$operador){
     switch($operador){
         case "Sumar": 
-            // $resultado = sumar($valor1,$valor2);
-            mostrarResultado(sumar($valor1,$valor2));
+            $resultado = sumar($valor1,$valor2);
             break;
         case "Dividir": 
-            // $resultado = dividir($valor1,$valor2);
-            mostrarResultado(dividir($valor1,$valor2));
+            $resultado = dividir($valor1,$valor2);
             break;
         default: 
             return "No existe esta función aun.";
             break;
     }
+    mostrarResultado($resultado);
 }
 
 function mostrarResultado($resultado){
@@ -95,11 +94,9 @@ if(isset($_POST['valor1'])){
     $valor2 = $_POST['valor2'];
     $operador = $_POST['operador'];
     
-    echo calcular($valor1,$valor2,$operador);
+    calcular($valor1,$valor2,$operador);
 }else{
-    $valor1 = 1;
-    $valor2 = 1;
-    $operador = "Sumar";
+    
 }
 
 
