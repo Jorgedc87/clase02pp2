@@ -28,6 +28,8 @@ De Celsius a Farenheit: F = (1,8) x C + 32
 
 */
 
+$_SERVER['REMOTE_ADDR'];
+
 function cel_a_far($celc){
     return ( 1.8 * $celc + 32);
 }
@@ -41,11 +43,11 @@ function transformar($valor,$conversion){
     switch($conversion){
         case "c":
         case "C":
-            $resultado = far_a_cel($valor);
+            $resultado = (round(far_a_cel($valor), 2) . "° Celcius");
             break;
         case "f":
         case "F":
-            $resultado = cel_a_far($valor);
+            $resultado = (round(cel_a_far($valor), 2) . "° Fahrenheit");
             break;
         default:
             $resultado = "No seleccionó opción correcta";
@@ -55,9 +57,7 @@ function transformar($valor,$conversion){
 }
 
 function mostrarTemperatura($resultado){
-    echo "<h1>Ejercicio número: 14</h1>";
-    echo $resultado;
-    echo "<h4>Autor: Jorge Calderón</h4>";
+    echo "<h1>$resultado </h1>";
 }
 
 if(isset($_POST['valor'])){
@@ -67,6 +67,8 @@ if(isset($_POST['valor'])){
     transformar($valor,$conver);
 }
 
+echo "<br><br>";
 
+var_dump($_SERVER);
 
 ?>
