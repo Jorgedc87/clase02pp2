@@ -9,10 +9,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 <form action="ejercicio14.php" method="post">
     <label for="">Temperatura:</label>
-    <input type="number" name="valor" placeholder="Ingrese el valor 1" required>
+    <input type="number" name="valor" placeholder="Ingrese la temperatura" required>
     <br><br>
     <label for="">¿A que quiere convertir? (C o F)</label>
-    <input type="text" name="conver" placeholder="Sumar o Dividir" required>
+    <input type="text" name="conver" placeholder="C o F" required>
     <input type="submit" value="Enviar">
     <br><br>
     
