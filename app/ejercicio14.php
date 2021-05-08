@@ -40,9 +40,11 @@ function far_a_cel($fahre){
 function transformar($valor,$conversion){
     switch($conversion){
         case "c":
+        case "C":
             $resultado = far_a_cel($valor);
             break;
         case "f":
+        case "F":
             $resultado = cel_a_far($valor);
             break;
         default:
